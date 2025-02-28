@@ -1,17 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://iayubllu3g2k"]
+[gd_scene load_steps=7 format=3 uid="uid://28ug7r8jbvb7"]
 
-[ext_resource type="Texture2D" uid="uid://bpj0kkngqc3p7" path="res://Assets/Game Assets/Player/Terran Sydicate Fighter.png" id="1_4u7dc"]
+[ext_resource type="Texture2D" uid="uid://bpj0kkngqc3p7" path="res://Assets/Game Assets/Player/Terran Sydicate Fighter.png" id="1_fa08f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_om3y4"]
-atlas = ExtResource("1_4u7dc")
+atlas = ExtResource("1_fa08f")
 region = Rect2(0, 0, 220, 220)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sa5ku"]
-atlas = ExtResource("1_4u7dc")
+atlas = ExtResource("1_fa08f")
 region = Rect2(0, 220, 220, 220)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wdlh"]
-atlas = ExtResource("1_4u7dc")
+atlas = ExtResource("1_fa08f")
 region = Rect2(220, 0, 220, 220)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jp30t"]
