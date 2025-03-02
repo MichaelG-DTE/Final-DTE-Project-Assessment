@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://28ug7r8jbvb7"]
+[gd_scene load_steps=8 format=3 uid="uid://28ug7r8jbvb7"]
 
 [ext_resource type="Texture2D" uid="uid://bpj0kkngqc3p7" path="res://Assets/Game Assets/Player/Terran Sydicate Fighter.png" id="1_fa08f"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ti2xj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_om3y4"]
 atlas = ExtResource("1_fa08f")
@@ -46,6 +47,7 @@ radius = 42.0
 height = 168.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ti2xj")
 
 [node name="Ship Texture" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jp30t")
