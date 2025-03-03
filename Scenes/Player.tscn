@@ -43,17 +43,20 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8dkqf"]
-radius = 42.0
-height = 168.0
+radius = 16.0
+height = 60.0
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(121, 261)
 script = ExtResource("1_ti2xj")
 
-[node name="Ship Texture" type="AnimatedSprite2D" parent="."]
+[node name="ShipTexture" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.52588e-05, -3.8147e-06)
+scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_jp30t")
 animation = &"Flying"
 autoplay = "Flying"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -20)
+position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_8dkqf")

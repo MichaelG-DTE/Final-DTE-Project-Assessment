@@ -11,12 +11,16 @@ config_version=5
 [application]
 
 config/name="Godot_Final-Assessment"
+run/main_scene="res://Scenes/Game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_height=2130
+window/size/viewport_width=304
+window/size/viewport_height=384
+window/size/window_width_override=580
+window/size/window_height_override=840
 window/stretch/mode="canvas_items"
 
 [editor]
