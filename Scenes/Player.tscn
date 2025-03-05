@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://28ug7r8jbvb7"]
+[gd_scene load_steps=16 format=3 uid="uid://28ug7r8jbvb7"]
 
 [ext_resource type="Texture2D" uid="uid://bpj0kkngqc3p7" path="res://Assets/Game Assets/Player/Terran Sydicate Fighter.png" id="1_fa08f"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ti2xj"]
+[ext_resource type="Texture2D" uid="uid://ca1frgykr22m2" path="res://Assets/Game Assets/Player/Thruster.png" id="3_nx44n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_om3y4"]
 atlas = ExtResource("1_fa08f")
@@ -42,21 +43,89 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8dkqf"]
-radius = 16.0
-height = 60.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_pidjv"]
+atlas = ExtResource("3_nx44n")
+region = Rect2(200, 0, 100, 200)
 
-[node name="Player" type="CharacterBody2D"]
-position = Vector2(121, 261)
+[sub_resource type="AtlasTexture" id="AtlasTexture_smr4u"]
+atlas = ExtResource("3_nx44n")
+region = Rect2(0, 200, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td1ep"]
+atlas = ExtResource("3_nx44n")
+region = Rect2(100, 200, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frk7a"]
+atlas = ExtResource("3_nx44n")
+region = Rect2(200, 200, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2rp1"]
+atlas = ExtResource("3_nx44n")
+region = Rect2(0, 0, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5amy3"]
+atlas = ExtResource("3_nx44n")
+region = Rect2(100, 0, 100, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nocrr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pidjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smr4u")
+}],
+"loop": true,
+"name": &"Left_Thrusters",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td1ep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frk7a")
+}],
+"loop": true,
+"name": &"Right_Thrusters",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2rp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5amy3")
+}],
+"loop": true,
+"name": &"Thrusters",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8dkqf"]
+radius = 30.0
+height = 104.0
+
+[node name="Player" type="CharacterBody2D" groups=["players"]]
+position = Vector2(257, 714)
 script = ExtResource("1_ti2xj")
 
 [node name="ShipTexture" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1.52588e-05, -3.8147e-06)
-scale = Vector2(0.35, 0.35)
+position = Vector2(0.249999, 8.25)
+scale = Vector2(0.711364, 0.711364)
 sprite_frames = SubResource("SpriteFrames_jp30t")
 animation = &"Flying"
 autoplay = "Flying"
 
+[node name="Thrusters" type="AnimatedSprite2D" parent="ShipTexture"]
+visible = false
+position = Vector2(-25.655, 136.006)
+scale = Vector2(1.04377, 1.04377)
+sprite_frames = SubResource("SpriteFrames_nocrr")
+animation = &"Thrusters"
+autoplay = "Thrusters"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0.25, 0.25)
 shape = SubResource("CapsuleShape2D_8dkqf")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://buq8t35v1nu5v"]
+[gd_scene load_steps=7 format=3 uid="uid://buq8t35v1nu5v"]
 
 [ext_resource type="Texture2D" uid="uid://tv6oe3abp4bd" path="res://Assets/Game Assets/Space_BG (2 frames) (64 x 64).png" id="1_2acnt"]
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_5uie1"]
 [ext_resource type="PackedScene" uid="uid://28ug7r8jbvb7" path="res://Scenes/Player.tscn" id="1_k2f6r"]
 
 [sub_resource type="Animation" id="Animation_8gyke"]
@@ -41,9 +42,11 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_5uie1")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_repeat = 2
+scale = Vector2(2.434, 2.27375)
 texture = ExtResource("1_2acnt")
 centered = false
 region_enabled = true
@@ -56,7 +59,7 @@ libraries = {
 autoplay = "Background"
 
 [node name="Player" parent="." instance=ExtResource("1_k2f6r")]
-position = Vector2(148, 321)
+position = Vector2(379, 236)
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="."]
-position = Vector2(148, 321)
+position = Vector2(251, 699)
