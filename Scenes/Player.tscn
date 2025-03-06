@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://28ug7r8jbvb7"]
+[gd_scene load_steps=14 format=3 uid="uid://28ug7r8jbvb7"]
 
 [ext_resource type="Texture2D" uid="uid://bpj0kkngqc3p7" path="res://Assets/Game Assets/Player/Terran Sydicate Fighter.png" id="1_fa08f"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ti2xj"]
@@ -43,6 +43,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1lsv"]
+atlas = ExtResource("3_872ew")
+region = Rect2(600, 0, 300, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc3bs"]
+atlas = ExtResource("3_872ew")
+region = Rect2(0, 320, 300, 320)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_oso0c"]
 atlas = ExtResource("3_872ew")
 region = Rect2(0, 0, 300, 320)
@@ -53,6 +61,17 @@ region = Rect2(300, 0, 300, 320)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p0p3k"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1lsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc3bs")
+}],
+"loop": true,
+"name": &"Left_Thrusters",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oso0c")
@@ -81,12 +100,12 @@ animation = &"Flying"
 autoplay = "Flying"
 
 [node name="Thrusters" type="AnimatedSprite2D" parent="ShipTexture"]
-position = Vector2(-0.351436, 124.76)
+position = Vector2(1.05431, 134.601)
 sprite_frames = SubResource("SpriteFrames_p0p3k")
-animation = &"Thrusters"
+animation = &"Left_Thrusters"
 autoplay = "Thrusters"
 frame = 1
-frame_progress = 0.141744
+frame_progress = 0.985846
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.25, 0.25)
